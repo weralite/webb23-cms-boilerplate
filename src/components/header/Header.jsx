@@ -20,7 +20,7 @@ export default function Header({ logo, menu }) {
                 {menu.map((item, index) => (
                   <li key={index}>
                     <a
-                      href={item.link?.url || '#'}
+                      href={item.link?.cached_url || '#'}
                       className="hover:text-gray-600" 
                     >
                       {item.title || 'No Title'}

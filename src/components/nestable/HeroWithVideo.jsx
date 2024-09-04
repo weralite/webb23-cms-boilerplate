@@ -1,9 +1,10 @@
 // components/Hero.js
 import Button from './Button';
 
-export default function Hero({ blok }) {
+export default function HeroWithVideo({ blok }) {
+  console.log("Video URL:", blok?.video_url);
   return (
-  
+
     <section className="flex flex-col-reverse md:flex-row w-full p-8 items-center justify-center">
       <div className="w-full md:w-1/2 pr-0 md:pr-8 flex flex-col justify-center md:text-left mb-8 md:mb-0">
         <h1 className="text-2xl md:text-4xl font-bold mb-4">
@@ -22,16 +23,22 @@ export default function Hero({ blok }) {
           </div>
         )}
       </div>
-
-      {blok?.image && (
-        <div className="w-full md:w-1/2 flex items-center justify-center pb-5">
-          <img 
-            src={blok.image.filename} 
-            alt={blok?.title || 'Hero Image'} 
-            className="object-cover w-[90%] h-auto" 
-          />
-        </div>
-      )}
+      
+      {blok?.video_url ? (
+  <div className="w-full md:w-1/2 flex items-center justify-center pb-5">
+    <div className="relative w-full max-w-[650px] max-h-[650px]">
+      <video 
+        controls 
+        className="w-full h-full object-cover"
+      >
+        <source src={blok?.video_url?.url} type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+) : (
+  <p className="text-center mt-4">No video URL provided.</p>
+)}
     </section>
   );
 }
