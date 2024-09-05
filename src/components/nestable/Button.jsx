@@ -1,6 +1,5 @@
 // components/Button.js
 export default function Button({ blok }) {
-  console.log('Button blok:', blok);
     return (
       <a
         href={blok?.link}
