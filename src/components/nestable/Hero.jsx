@@ -28,7 +28,7 @@ export default function Hero({ blok }) {
           <img 
             src={blok.image.filename} 
             alt={blok?.title || 'Hero Image'} 
-            className="object-cover w-[90%] h-auto" 
+            className="object-cover w-[100%] h-auto" 
           />
         </div>
       )}

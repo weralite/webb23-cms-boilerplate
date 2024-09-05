@@ -15,7 +15,7 @@ export default function Header({ config }) {
         )}
 
         {navigation?.length > 0 && (
-          <nav className="hidden md:flex space-x-4">
+          <nav className="md:flex space-x-4">
             <ul className="flex space-x-4">
               {navigation.map((item, index) => (
                 <li key={index}>
