@@ -76,7 +76,7 @@ export class StoryblokCMS {
 
         if (slug != "") {
           paths.push({
-            slug: slug.split("/"),
+            params: { slug: slug.split("/") },
           });
         }
       });
