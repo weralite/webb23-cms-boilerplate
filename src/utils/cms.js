@@ -81,9 +81,16 @@ export class StoryblokCMS {
         }
       });
 
-      return paths;
+      return {
+        paths,
+        fallback: false, // Adjust fallback according to your needs
+      };
     } catch (error) {
       console.log("PATHS ERROR", error);
+      return {
+        paths: [],
+        fallback: false, // or true, depending on your fallback strategy
+      };
     }
   }
 }
