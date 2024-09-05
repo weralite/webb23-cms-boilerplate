@@ -76,21 +76,14 @@ export class StoryblokCMS {
 
         if (slug != "") {
           paths.push({
-            params: { slug: slug.split("/") },
+            slug: slug.split("/"),
           });
         }
       });
 
-      return {
-        paths,
-        fallback: false, // Adjust fallback according to your needs
-      };
+      return paths;
     } catch (error) {
       console.log("PATHS ERROR", error);
-      return {
-        paths: [],
-        fallback: false, // or true, depending on your fallback strategy
-      };
     }
   }
 }
